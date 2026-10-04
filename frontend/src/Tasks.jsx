@@ -51,7 +51,7 @@ function Tasks({taskVersion}) {
   const [tasks, setTasks] = useState([])
 
   async function fetchTasks() {
-    const response = await fetch("http://127.0.0.1:8000/tasks")
+    const response = await fetch("https://organize-me-backend.onrender.com/tasks")
     const data = await response.json()
     setTasks(data)
   }
@@ -62,7 +62,7 @@ function Tasks({taskVersion}) {
 
   async function toggleTask(task) {
     await fetch(
-      `http://127.0.0.1:8000/tasks/${task.id}?completed=${!task.completed}`,
+      `https://organize-me-backend.onrender.com/plan${task.id}?completed=${!task.completed}`,
       { method: "PUT" }
     )
     fetchTasks()
@@ -70,7 +70,7 @@ function Tasks({taskVersion}) {
 
   async function deleteTask(taskId) {
     await fetch(
-      `http://127.0.0.1:8000/tasks/${taskId}`,
+      `https://organize-me-backend.onrender.com/plan${taskId}`,
       { method: "DELETE" }
     )
     fetchTasks()
