@@ -7,7 +7,7 @@ function Planner({onTasksCreated}){
         setIsLoading(true)
         setMessage("")
         try {
-        const response = await fetch("https://organize-me-backend.onrender.com/plan",{
+        const response = await fetch("http://127.0.0.1:8000/plan",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
